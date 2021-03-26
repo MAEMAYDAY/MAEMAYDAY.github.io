@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-03-26 16:35:58 / Modified: 16:37:24" itemprop="dateCreated datePublished" datetime="2021-03-26T16:35:58+01:00">2021-03-26</time>
+              <time title="Created: 2021-03-26 16:42:58 / Modified: 16:43:58" itemprop="dateCreated datePublished" datetime="2021-03-26T16:42:58+01:00">2021-03-26</time>
             </span>
 
           
@@ -184,111 +184,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>软件设计的最大目标，就是降低复杂性（complexity）。 所谓复杂性，就是任何使得软件难于理解和修改的因素。</p>
-</blockquote>
-<p>Complexity is anything that makes software hard to understand or to modify.</p>
-<p>复杂性的来源主要有两个：代码的含义模糊和互相依赖。</p>
-<p>Complexity is caused by obscurity and dependencies.</p>
-<p>模糊指的是，代码里面的重要信息，看不出来。依赖指的是，某个模块的代码，不结合其他模块，就会无法理解。</p>
-<p>Obscurity is when important information is not obvious.</p>
-<p>Dependency is when code can’t be understood in isolation.</p>
-<p>复杂性的危害在于，它会递增。你做错了一个决定，导致后面的代码都基于前面的错误实现，整个软件变得越来越复杂。”我们先把产品做出来，后面再改进”，这根本做不到。</p>
-<p>Complexity is incremental, the result of thousands of choices. Which makes it hard to prevent and even harder to fix.</p>
-<p>引用自《软件设计的哲学》、<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/09/complexity.html">如何降低软件的复杂性？</a></p>
-<p>核心思路是把能力和业务分离。一个 View 或者一个类它能做什么，和我们用它做什么，两者进行分离。</p>
-<h2 id="TimelineLayout-重构"><a href="#TimelineLayout-重构" class="headerlink" title="TimelineLayout 重构"></a>TimelineLayout 重构</h2><p>timeline 目前最大的问题是被依赖太多，职责也太多。目前不打算做太大的重构，而是拆分职责。暂且想法是分为不同的Control管理。</p>
-<p><strong>拆分的模块</strong>：</p>
-<ul>
-<li><p><input disabled="" type="checkbox">  自身功能的内部实现。（如拖拽、移动、缩放等）</p>
-</li>
-<li><p><input disabled="" type="checkbox">  用户行为的业务代码（点击、拖拽等事件后的业务逻辑）</p>
-</li>
-<li><p><input disabled="" type="checkbox">  播放滑动导出模块</p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox">  View 管理（创建、删除）</p>
-</li>
-<li><p><input disabled="" type="checkbox">  业务逻辑（拆分，复制，定格，录音）</p>
-</li>
-<li><p><input disabled="" type="checkbox">  View 的业务代码</p>
-</li>
-<li><p><input disabled="" type="checkbox">  人脸</p>
-</li>
-<li><p><input disabled="" type="checkbox">  OpenGL</p>
-</li>
-<li><p><input disabled="" type="checkbox">  历史模块</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/26/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-26 15:38:02" itemprop="dateCreated datePublished" datetime="2021-03-26T15:38:02+01:00">2021-03-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+          <p>\begin{center}</p>
+<p>Model 10: OLS, using observations 1–88\<br>Dependent variable: lassess\</p>
+<p>\vspace{1em}</p>
+<p>\begin{tabular}{lr@{.}lr@{.}lr@{.}lr@{.}l}<br>  &amp;<br> \multicolumn{2}{c}{Coefficient} &amp;<br>  \multicolumn{2}{c}{Std.\ Error} &amp;<br>   \multicolumn{2}{c}{$t$-ratio} &amp;<br>    \multicolumn{2}{c}{p-value} \[1ex]<br>const &amp;<br>  $-$0&amp;961502 &amp;<br>    0&amp;289116 &amp;<br>      $-$3&amp;326 &amp;<br>        0&amp;0013 \<br>lsqrft &amp;<br>  0&amp;513807 &amp;<br>    0&amp;0532855 &amp;<br>      9&amp;643 &amp;<br>        0&amp;0000 \<br>llotsize &amp;<br>  0&amp;0961541 &amp;<br>    0&amp;0196144 &amp;<br>      4&amp;902 &amp;<br>        0&amp;0000 \<br>lprice &amp;<br>  0&amp;343033 &amp;<br>    0&amp;0499651 &amp;<br>      6&amp;865 &amp;<br>        0&amp;0000 \<br>\end{tabular}</p>
+<p>\vspace{1ex}<br>\begin{tabular}{lrlr}<br>Mean dependent var &amp;  5.717994 &amp; S.D. dependent var &amp;  0.262113 \<br>Sum squared resid &amp;  0.613178 &amp; S.E. of regression &amp;  0.085439 \<br>$R^2$ &amp;  0.897414 &amp; Adjusted $R^2$ &amp;  0.893750 \<br>$F(3, 84)$ &amp;  244.9406 &amp; P-value($F$) &amp;  2.05\textrm{e–41} \<br>Log-likelihood &amp;  93.65663 &amp; Akaike criterion &amp; $-$179.3133 \<br>Schwarz criterion &amp; $-$169.4039 &amp; Hannan–Quinn &amp; $-$175.3210 \<br>\end{tabular}</p>
+<p>\end{center}</p>
 
       
     </div>
@@ -370,7 +271,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
