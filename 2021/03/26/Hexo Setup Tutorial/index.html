@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="注册GitHub账号 进入GitHub官网，新用户注册，一定记住注册的账号名和邮箱，后面会用到。  安装node.js和npm 进入Node官网，下载相应版本。在Windows上安装时务必选择全部组件，包括勾选 Add to Path。 安装后，检测Node.js是否安装成功，调出终端（mac自带软件，可用command+space直接输入terminal搜索可得）在cmd命令行中输入： 12$">
+  <meta name="description" content="轻松愉快的无基础上手教程简介没什么好多说的，let‘s go！ 该指南共分为如下步骤：  搭建博客准备 在Github搭建博客 配置Hexo框架 更换博客默认主题 同步本地博文并上传 提前解答一些可能在同步博文时会遇到的问题  最后附有常用命令以便查看。 事前准备注册GitHub账号 进入GitHub官网，新用户注册，一定记住注册的账号名和邮箱，后面会用到。  安装node.js和npm 进入No">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github + Hexo从零开始搭建Github博客（针对Mac用户）">
 <meta property="og:url" content="http://example.com/2021/03/26/Hexo%20Setup%20Tutorial/index.html">
 <meta property="og:site_name" content="Zz">
-<meta property="og:description" content="注册GitHub账号 进入GitHub官网，新用户注册，一定记住注册的账号名和邮箱，后面会用到。  安装node.js和npm 进入Node官网，下载相应版本。在Windows上安装时务必选择全部组件，包括勾选 Add to Path。 安装后，检测Node.js是否安装成功，调出终端（mac自带软件，可用command+space直接输入terminal搜索可得）在cmd命令行中输入： 12$">
+<meta property="og:description" content="轻松愉快的无基础上手教程简介没什么好多说的，let‘s go！ 该指南共分为如下步骤：  搭建博客准备 在Github搭建博客 配置Hexo框架 更换博客默认主题 同步本地博文并上传 提前解答一些可能在同步博文时会遇到的问题  最后附有常用命令以便查看。 事前准备注册GitHub账号 进入GitHub官网，新用户注册，一定记住注册的账号名和邮箱，后面会用到。  安装node.js和npm 进入No">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/02_Create_Repository.jpg">
 <meta property="og:image" content="http://example.com/images/01.png">
@@ -38,8 +38,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/10_themes_next.jpg">
 <meta property="og:image" content="http://example.com/images/schemes.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/13_Site.jpg">
+<meta property="og:image" content="http://example.com/images/typora_image_preference_setting.png">
+<meta property="og:image" content="http://example.com/images/image_special_setting.png">
+<meta property="og:image" content="http://example.com/images/github_username_setting.png">
 <meta property="article:published_time" content="2021-03-26T18:53:00.264Z">
-<meta property="article:modified_time" content="2021-03-27T09:42:13.313Z">
+<meta property="article:modified_time" content="2021-03-27T10:57:36.782Z">
 <meta property="article:author" content="Zimno">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/02_Create_Repository.jpg">
@@ -193,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-27 10:42:13" itemprop="dateModified" datetime="2021-03-27T10:42:13+01:00">2021-03-27</time>
+                <time title="Modified: 2021-03-27 11:57:36" itemprop="dateModified" datetime="2021-03-27T11:57:36+01:00">2021-03-27</time>
               </span>
 
           
@@ -207,7 +210,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h3 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h3><blockquote>
+        <h1 id="轻松愉快的无基础上手教程"><a href="#轻松愉快的无基础上手教程" class="headerlink" title="轻松愉快的无基础上手教程"></a>轻松愉快的无基础上手教程</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>没什么好多说的，let‘s go！</p>
+<p>该指南共分为如下步骤：</p>
+<ol>
+<li>搭建博客准备</li>
+<li>在Github搭建博客</li>
+<li>配置Hexo框架</li>
+<li>更换博客默认主题</li>
+<li>同步本地博文并上传</li>
+<li>提前解答一些可能在同步博文时会遇到的问题</li>
+</ol>
+<p>最后附有常用命令以便查看。</p>
+<h2 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h2><h3 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h3><blockquote>
 <p>进入<a target="_blank" rel="noopener" href="https://github.com/">GitHub官网</a>，新用户注册，一定记住注册的账号名和邮箱，后面会用到。</p>
 </blockquote>
 <h3 id="安装node-js和npm"><a href="#安装node-js和npm" class="headerlink" title="安装node.js和npm"></a>安装node.js和npm</h3><blockquote>
@@ -222,11 +236,11 @@
 <p><img src="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/02_Create_Repository.jpg" alt="Create_Repository"></p>
 </blockquote>
 <p><strong>请注意，此处的Repository name必须等同于你的Owner名字。</strong>如果你的名字是Prophet，repository栏目则需要输入prophet.github.io作为注册域名。</p>
-<img src="/images/01.png" alt="01" style="zoom:50%;" />
+<img src="/images/01.png" alt="01" style="zoom:50%;">
 
 <p>选择public后，剩余三个选项不需勾选，直接create repository。</p>
 <p><strong>记住，在创建完成之后跳转的那个页面中，你将在Quick setup获得各一个https与ssh链接。</strong></p>
-<img src="/images/quick_setup.png" alt="quick_setup" style="zoom:50%;" />
+<img src="/images/quick_setup.png" alt="quick_setup" style="zoom:50%;">
 
 <p><strong>请复制这两个链接妥善保存，并保留该页面直到该指南完成为止。</strong></p>
 <h2 id="使用Hexo博客框架"><a href="#使用Hexo博客框架" class="headerlink" title="使用Hexo博客框架"></a>使用Hexo博客框架</h2><h4 id="安装与初始化"><a href="#安装与初始化" class="headerlink" title="安装与初始化"></a>安装与初始化</h4><blockquote>
@@ -245,7 +259,7 @@
 </blockquote>
 <p>备注2：同样若命令无法执行请在最前加上sudo。</p>
 <p>完成后检查博客目录中的文件信息是否如下，如下图：</p>
-<img src="/images/image-20210326195813334.png" alt="image-20210326195813334" style="zoom:50%;" />
+<img src="/images/image-20210326195813334.png" alt="image-20210326195813334" style="zoom:50%;">
 
 
 
@@ -255,7 +269,7 @@
 
 
 <p>在打开至你新创建的文件夹后terminal显示如下：</p>
-<img src="/images/cd_to_new_folder.png" alt="cd_to_new_folder" style="zoom:50%;" />
+<img src="/images/cd_to_new_folder.png" alt="cd_to_new_folder" style="zoom:50%;">
 
 <p>在terminal输入以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g # 生成静态文件</span><br></pre></td></tr></table></figure>
@@ -290,7 +304,7 @@
 <p>启用主题，打开根目录下站点配置文件 <code>_config.yml</code>， 找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>，如下：</p>
 <p><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/10_themes_next.jpg"><img src="https://raw.githubusercontent.com/tengzi-will/img.tengzi-will.github.io/master/GitHub-Hexo-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/10_themes_next.jpg" alt="thems_next"></a></p>
 <p>打开theme文件夹下的另一个同名 <code>_config.yml</code> 配置文件，（不是根目录的<strong>站点配置文件</strong>），找到Scheme Settings</p>
-<img src="/images/schemes.png" alt="schemes" style="zoom:50%;" />
+<img src="/images/schemes.png" alt="schemes" style="zoom:50%;">
 
 <p><code>next</code> 主题有四个样式，老师先前使用的博客最接近的应该是安装后默认的<code>Muse</code>，所以可以不用更改。但如果想挨个尝试也可以。请不要删除四个scheme里任意一条，如果想切换主题，只需在不想要的scheme前输入<code>#</code>，并将想要使用的主题前的<code>#</code>删除，最后保存文件即可。</p>
 <p>在每次更新完配置文件，如切换主题之后，请先使用 <code>hexo clean</code> 来清除 Hexo 的缓存，以免出现一些莫名其妙的问题。</p>
@@ -316,6 +330,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &#39;blog_name&#39; # blog_name填入文章名字</span><br></pre></td></tr></table></figure>
 
 <p>执行命令后，hexo会帮我们在 <code>..\您所创建的文件夹名（比如hexo）\source\_posts</code> 下自动生成相关 <code>md</code> 文件，每一篇博客对应一个 <code>md</code> 文件。直接使用typora打开 <code>md</code> 文件可以直接编辑。</p>
+<p>或者，可以使用typora创建md文档复制到source文件夹下。与<code>hexo n</code>的功能相同。</p>
 <h4 id="同步一篇博文"><a href="#同步一篇博文" class="headerlink" title="同步一篇博文"></a>同步一篇博文</h4><p>此时您已经可以随时同步自己的文章至您的新博客了。</p>
 <p>您可重复在终端使用如下命令：</p>
 <p>hexo g， hexo s，在浏览器打开<code>http://localhost:4000</code>来本地审查。</p>
@@ -324,13 +339,39 @@
 <p>备注6:当然，您可以使用更简短的组合命令来代替hexo g+hexo s。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -g # 生成并本地预览（ 别忘了同步前先ctrlC退出本地模式）</span><br><span class="line">$ hexo d -g # 生成并上传</span><br></pre></td></tr></table></figure>
 
-<p>备注7:关于文章内想插入图片。请单独在source文件夹内创建images文件夹，将图片保存至该文件夹下，并用该路径的图片插入正文，才能保证同步时不丢失图片信息。</p>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果您还有使用jekyll来渲染博客的需求（您全程使用terminal可能已经找到了更为简单的道路），此处附上Jekyll基于的Github博客的教程<a target="_blank" rel="noopener" href="https://we.markeditor.com/post/how-to-sync-to-github-pages#main">Github Pages &amp; Jekyll 静态博客</a></p>
+<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><p>备注7:关于文章内想插入图片。请单独在source文件夹内创建images文件夹，将图片保存至该文件夹下，并用该路径的图片插入正文，才能保证同步时不丢失图片信息。</p>
 <p>同时，插入的图片路径应修改为绝对路径或相对路径，详见<a target="_blank" rel="noopener" href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片</a></p>
-<p>备注8:关于在Github上显示文章标题而非Untitled，请在每个typora制作的markdown文档顶部加如下格式：</p>
+<p>备注8:一个个插入图片很麻烦，所以在typora的偏好设置里，请勾选如下选项。</p>
+<img src="/images/typora_image_preference_setting.png" alt="image-20210327111852319" style="zoom:33%;">
+
+
+
+<p>则图片每次复制都会提示您保存至image文件夹。</p>
+<p>复制完后，请将如下图所示的<code>..</code>部分删除。此时图片内容无法正常显示，但本地浏览或上传至博客时是正常显示的。</p>
+<p><img src="/images/image_special_setting.png" alt="image-20210327112631916"></p>
+<p>博文相关的图片请<strong>统一保存在source文件夹下的image文件夹里</strong>，请不要随意移动位置。注意不要保存在Public文件夹里。（Public文件夹仅用于临时缓存）</p>
+<hr>
+<p>备注9:关于博客上如何正常显示文章标题，而非Untitled。</p>
+<p>请在每个typora制作的markdown文档顶部加如下格式：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 你想要的标题名</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<p>备注9:</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果您还有使用jekyll来渲染博客的需求（您全程使用terminal可能已经找到了更为简单的道路），此处附上Jekyll基于的Github博客的教程<a target="_blank" rel="noopener" href="https://we.markeditor.com/post/how-to-sync-to-github-pages#main">Github Pages &amp; Jekyll 静态博客</a></p>
+
+
+<hr>
+<p>备注10:如果您希望在github的代码目录页面显示Prophet作为公开的名字（比如这里我修改成了Zimno，如图），</p>
+<img src="/images/github_username_setting.png" alt="image-20210327112050997" style="zoom:33%;">
+
+<p>请在terminal输入以下命令来更改默认配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;user_name&quot; # user_name填入您希望公开显示的姓名</span><br><span class="line">$ git config --global user.email &quot;user_email&quot; # user_email填入GitHub注册的邮箱</span><br></pre></td></tr></table></figure>
+
+<p>如果不设置，在Github的目录页面则会显示您电脑本地系统的用户名。</p>
+<p>查看已设置的用户名和邮箱：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name &quot;user_name&quot; </span><br><span class="line">$ git config user.email &quot;user_email&quot; </span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="Terminal常用命令"><a href="#Terminal常用命令" class="headerlink" title="Terminal常用命令"></a>Terminal常用命令</h3><h4 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h4><ol>
 <li><p>cd # 打开文件夹到下一级目录</p>
 </li>
@@ -435,7 +476,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CGitHub%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.0.1.</span> <span class="nav-text">注册GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node-js%E5%92%8Cnpm"><span class="nav-number">1.0.2.</span> <span class="nav-text">安装node.js和npm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.1.</span> <span class="nav-text">搭建github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6"><span class="nav-number">1.2.</span> <span class="nav-text">使用Hexo博客框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">安装与初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">本地预览</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub"><span class="nav-number">1.2.1.</span> <span class="nav-text">上传到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">配置站点配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">部署到 GitHub</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo博客基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">配置站点信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.2.</span> <span class="nav-text">高级配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDtypora"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">下载typora</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">创建一篇博文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">同步一篇博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.4.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-number">1.5.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Terminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.5.1.</span> <span class="nav-text">Terminal常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">常见命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.5.2.</span> <span class="nav-text">hexo常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">常见命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%A9%E5%86%99"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">缩写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">组合命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.</span> <span class="nav-text">参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-number">1.6.1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">1.6.2.</span> <span class="nav-text">Git 使用教程</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%BB%E6%9D%BE%E6%84%89%E5%BF%AB%E7%9A%84%E6%97%A0%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%89%8B%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">轻松愉快的无基础上手教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%89%8D%E5%87%86%E5%A4%87"><span class="nav-number">1.2.</span> <span class="nav-text">事前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CGitHub%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.2.1.</span> <span class="nav-text">注册GitHub账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85node-js%E5%92%8Cnpm"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装node.js和npm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2"><span class="nav-number">1.3.</span> <span class="nav-text">搭建github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">创建仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6"><span class="nav-number">1.4.</span> <span class="nav-text">使用Hexo博客框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">安装与初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">本地预览</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub"><span class="nav-number">1.4.1.</span> <span class="nav-text">上传到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">配置站点配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">部署到 GitHub</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.</span> <span class="nav-text">Hexo博客基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.1.</span> <span class="nav-text">基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">配置站点信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.2.</span> <span class="nav-text">高级配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDtypora"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">下载typora</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">创建一篇博文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">同步一篇博文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">1.6.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.6.1.</span> <span class="nav-text">可能出现的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-number">1.7.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Terminal%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.1.</span> <span class="nav-text">Terminal常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">常见命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.2.</span> <span class="nav-text">hexo常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4-1"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">常见命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%A9%E5%86%99"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">缩写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%91%BD%E4%BB%A4"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">组合命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">1.8.</span> <span class="nav-text">参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-number">1.8.1.</span> <span class="nav-text">博客搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">1.8.2.</span> <span class="nav-text">Git 使用教程</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
